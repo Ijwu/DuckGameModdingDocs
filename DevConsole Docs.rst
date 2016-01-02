@@ -3,16 +3,16 @@ DevConsole Commands
 
 spawn
 -----
-Can be used to spawn any `Thing`. The `Thing` in question must have a parameterless constructor.
+Can be used to spawn any ``Thing``. The ``Thing`` in question must have a parameterless constructor.
 
 Cannot be used online or in any challenge arcade levels. Can be used within the challenge arcade itself.
 
 Usage
 ~~~~~
-`spawn (thing) (x) (y)`
+``spawn (thing) (x) (y)``
 
 thing:
-	The name of the `Type` of the `Thing` you wish to spawn.
+	The name of the ``Type`` of the ``Thing`` you wish to spawn.
 x: 
 	Target X-coordinate
 y: 
@@ -23,16 +23,15 @@ modhash
 Gets the SHA256CNG hash of the user's current mods. This hash is produced by taking all mods and concatenating them into a string and then hashing thew string. If the user has no mods the string "nomods" is returned instead of a hash.
 
 Hashed string format:
-```c#
-	string.Join("|", Mods.Where(x => (!x is CoreMod) && !(a is DisabledMod)).Select(x => $"{x.Name}_{x.Version}")
-```			
+    ``string.Join("|", Mods.Where(x => (!x is CoreMod) && !(a is DisabledMod)).Select(x => $"{x.Name}_{x.Version}")``
+	
 
 Example string pre-hash:
-`ExampleMod_1.1|OtherExample_0.2`
+``ExampleMod_1.1|OtherExample_0.2``
 
 Usage
 ~~~~~
-`modhash`
+``modhash``
 
 netdebug
 --------
@@ -42,28 +41,28 @@ Shows information such as latency, jitter, and loss in the top left corner of th
 
 Usage
 ~~~~~
-`netdebug`
+``netdebug``
 
 record
 ------
-Begins recording gameplay. The recording is dumped as 2 files in your `Duck Game` root folder. (The folder where the game's EXE is)
+Begins recording gameplay. The recording is dumped as 2 files in your ``Duck Game`` root folder. (The folder where the game's EXE is)
 
 Attempting to start a recording while another is in progress will crash your game.
 
 Usage
 ~~~~~
-`record (name)`
+``record (name)``
 
 name:
 	Name to save the recording under.
 
 close
 -----
-Closes the console. The console will state that this is an invalid command. This is incorrect. The developers forgot a `return` statement after this command. It's sole intention seems to be to close the console.
+Closes the console. The console will state that this is an invalid command. This is incorrect. The developers forgot a ``return`` statement after this command. It's sole intention seems to be to close the console.
 
 Usage
 ~~~~~
-`close`
+``close``
 
 stop
 ----
@@ -71,17 +70,17 @@ Stops any ongoing recordings.
 
 Usage
 ~~~~~
-`stop`
+``stop``
 
 playback
 --------
-`Plays back a recording.`
+``Plays back a recording.``
 
 Crashes the game due to an unimplemented method as of the time of writing.
 
 Usage
 ~~~~~
-`playback (name)`
+``playback (name)``
 
 name:
 	Recording name to play back.
@@ -94,10 +93,10 @@ Cannot be used online or in any challenge arcade levels. Can be used within the 
 
 Usage
 ~~~~~
-`level (path)`
+``level (path)``
 
 path:
-	The relative path to the level file from the `%duckgamebin%/Content/levels/deathmatch` folder.
+	The relative path to the level file from the ``%duckgamebin%/Content/levels/deathmatch`` folder.
 
 team
 ----
@@ -107,7 +106,7 @@ Cannot be used online or in any challenge arcade levels. Can be used within the 
 
 Usage
 ~~~~~
-`team (profile) (team)`
+``team (profile) (team)``
 
 profile:
 	The profile name of the player to have their team changed.
@@ -123,45 +122,45 @@ Cannot be used online or in any challenge arcade levels. Nor can it be used in t
 
 Usage
 ~~~~~
-`give (profile) (thing)`
+``give (profile) (thing)``
 
 profile:
-	The profile name of the player to give the `Thing` to.
+	The profile name of the player to give the ``Thing`` to.
 
 thing:
-	The name of the `Type` of the `Thing` to give the player. The `Thing` must be a `Holdable`.
+	The name of the ``Type`` of the ``Thing`` to give the player. The ``Thing`` must be a ``Holdable``.
 
 call
 ----
-Calls a parameterless method in the `Duck` class on behalf of a player.
+Calls a parameterless method in the ``Duck`` class on behalf of a player.
 
 Cannot be used online or in any challenge arcade levels. Can be used within the challenge arcade itself.
 
 Usage
 ~~~~~
-`call (profile) (method)`
+``call (profile) (method)``
 
 profile:
-	The profile name of the `Duck` to run the method on behalf of.
+	The profile name of the ``Duck`` to run the method on behalf of.
 
 method:
 	The method name to run on.
 
 set
 ---
-Sets the value of a property in the `Duck` class on behalf of a player.
+Sets the value of a property in the ``Duck`` class on behalf of a player.
 
 Cannot be used online or in any challenge arcade levels. Can be used within the challenge arcade itself.
 
 Usage
 ~~~~~
-`set (profile) (property|field) (value)`
+``set (profile) (property|field) (value)``
 
 profile:
-	The name of the profile of the `Duck` to change the property or field value.
+	The name of the profile of the ``Duck`` to change the property or field value.
 
 property | field:
-	The name of the property or field in the `Duck` class.
+	The name of the property or field in the ``Duck`` class.
 
 value:
 	The value to set the property or field to.
@@ -180,7 +179,7 @@ Cannot be used online or in any challenge arcade levels. Can be used within the 
 
 Usage
 ~~~~~
-`kill (profile)`
+``kill (profile)``
 
 profile:
 	The profile name of the duck to be killed.
@@ -191,7 +190,7 @@ Generates a score number for each profile in the game.
 
 Usage
 ~~~~~
-`globalscores`
+``globalscores``
 
 scorelog
 --------
@@ -199,7 +198,7 @@ Shows a realtime score rundown for the selected profile.
 
 Usage
 ~~~~~
-`scorelog (index)`
+``scorelog (index)``
 
 index:
 	Zero-based index of the profiles in the game.
@@ -212,7 +211,7 @@ Cannot be used online or in any challenge arcade levels. Can be used within the 
 
 Usage
 ~~~~~
-`toggle (layer)`
+``toggle (layer)``
 
 layer:
 	Layer to toggle.
@@ -231,19 +230,19 @@ Cannot be used online or in any challenge arcade levels. Can be used within the 
 
 Usage
 ~~~~~
-`splitscreen`
+``splitscreen``
 
 rhythmmode
 ----------
 Toggles rhythm mode.
 
-Seems to toggle more elements to be drawn on screen by calling `RhythmMode.Draw()`. Crashes the game due to a music track not being found.
+Seems to toggle more elements to be drawn on screen by calling ``RhythmMode.Draw()``. Crashes the game due to a music track not being found.
 
 Cannot be used online or in any challenge arcade levels. Can be used within the challenge arcade itself.
 
 Usage
 ~~~~~
-`rhythmmode`
+``rhythmmode``
 
 qwopmode
 --------
@@ -253,7 +252,7 @@ Cannot be used online or in any challenge arcade levels. Can be used within the 
 
 Usage
 ~~~~~
-`qwopmode`
+``qwopmode``
 
 showislands
 -----------
@@ -261,7 +260,7 @@ Shows collision islands.
 
 Usage
 ~~~~~
-`showislands`
+``showislands``
 
 showcollision
 -------------
@@ -269,10 +268,4 @@ Does nothing.
 
 Usage
 ~~~~~
-`showcollision`
-
-
-
-
-
-
+``showcollision``
